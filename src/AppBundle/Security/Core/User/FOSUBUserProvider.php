@@ -100,3 +100,4 @@ class FOSUBUserProvider extends BaseClass {
         return $username. "_" . $serviceName;
     }
 }
+

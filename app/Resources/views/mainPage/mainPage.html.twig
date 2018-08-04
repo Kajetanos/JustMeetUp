@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+
+{% endblock %}
+{% block body %} 
+    <!doctype html>
+    <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+            <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+            <script src="https://js.arcgis.com/4.8/esri/views/MapView"></script>
+            <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+            <script src="https://js.arcgis.com/4.8/"></script>
+            
+        </head>
+        <body>
+            {% block javascripts %}
+                <script src="{{ asset('js/main.js') }}"></script>
+            {% endblock %}
+            <div id="viewDiv"></div>
+        </body>
+    </body>
+</html>
+{% endblock %}

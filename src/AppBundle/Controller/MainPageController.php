@@ -25,7 +25,6 @@ class MainPageController extends Controller{
     public function welcome()
     {    
       $welcome = "hello" ;
-        
-        return new Response('<html><body>Welcome to page: '.$welcome.'</body></html>');
+        return $this->render('mainPage/mainPage.html.twig' ,array('welcome' => $welcome));
     }
 }
