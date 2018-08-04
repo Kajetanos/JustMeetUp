@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+
+{% endblock %}
+{% block body %} 
+    <!doctype html>
+    <html>
+
+        <head>
+            <title>Simple Map</title>
+            <meta name="viewport" content="initial-scale=1.0">
+            <meta charset="utf-8">
+            <style>
+                /* Always set the map height explicitly to define the size of the div
+                 * element that contains the map. */
+                #map {
+                    float: left;
+                    height: 400px;
+                    width: 70%
+                }
+                /* Optional: Makes the sample page fill the window. */
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+                .notafications{
+                    float:left; 
+                    width: 30%;
+                }
+            </style>
+        </head>
+        <body>
+            <div>
+                <div id="map"></div>
+                <div class="notafications">
+
+                    <ol>
+                        {% for notafication in notafications %}
+                            <ul>{{notafication}}</ul>
+                            {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            <script>
+                var map;
+                function initMap() {
+                    var uluru = {lat: 53.344, lng: 17.95};
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: 53.1256045, lng: 17.8977559},
+                        zoom: 8
+                    });
+                    var marker = new google.maps.Marker({position: uluru, map: map})
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key={{ googleApi }}&callback=initMap"
+            async defer></script>
+        </body>
+    </html>
+{% endblock %}

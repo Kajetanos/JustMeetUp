@@ -12,4 +12,5 @@ require([
         zoom: 7, // Sets zoom level based on level of detail (LOD)
         center: [18.50878632, 52.8]  // Sets center point of view using longitude,latitude
     });
+    
 });
