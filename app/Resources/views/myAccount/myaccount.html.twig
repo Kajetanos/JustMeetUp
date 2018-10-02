@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+
+{% endblock %}
+{% block body %} 
+    <!doctype html>
+    <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+            <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+            <script src="https://js.arcgis.com/4.8/esri/views/MapView"></script>
+            <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+            <script src="https://js.arcgis.com/4.8/"></script>
+
+        </head>
+        <body>
+            {% block javascripts %}
+                <script src="{{ asset('js/main.js') }}"></script>
+            {% endblock %}
+            <div class="container">
+                <script>
+                    $(document).ready(function () {
+                        console.log("Script working properly");
+                        var countClickLogin = 0;
+                        $("#changeLogin").click(function () {
+                            $('#name').prop("readonly", false);
+                            $(this).text('Zapisz');
+                            countClickLogin++;
+                            if (countClickLogin === 2) {
+                                console.log("cos");
+                                $(this).prop("type", "submit");
+                            }
+                        });
+                        countClickEmail = 0;
+                        $("#changeEmail").click(function () {
+                            $('#email').prop("readonly", false);
+                            $(this).text('Zapisz');
+                            countClickEmail++;
+                            if (countClickEmail === 2) {
+                                console.log("cos");
+                                $(this).prop("type", "submit");
+                            }
+                        });
+                    });
+
+                </script>
+
+                <script src="jquery.js"></script>
+                <div>
+                    
+                    <div class="row"> 
+                        <div class="col-md-3" id="menuMyAccount">
+                            <a class="active" href="myaccount" >Dane podstawowe</a>
+                        <hr>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card" id="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4> {{login}} </h4>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="divMyAccount">
+                                        <div class="col-md-12" id="firstForm" style="float: left">
+                                            <form method="post">
+                                                <div class="form-group row">
+                                                    <label for="name" class="col-4 col-form-label">Imię</label> 
+                                                    <div class="col-8">
+                                                        <input id="name" name="name" placeholder="{{login}}" class="form-control here" type="text" readonly>
+                                                        <button type="button" class="btn btn-primary btn-sm" id="changeLogin">Change your login</button>
+                                                    </div>
+                                                </div>
+                                            </form >
+                                            <form method="post">
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-4 col-form-label">Email</label> 
+                                                    <div class="col-8">
+                                                        <input id="email" name="email" placeholder="{{email}}" class="form-control here"  type="text" readonly >
+                                                        <button type="button" class="btn btn-primary btn-sm" id="changeEmail">Change your login</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <hr>
+                                        </div>     
+                                        <div class="col-md-12">
+                                            <form method="post">
+
+                                                <div class="form-group row">
+                                                    <label for="select" class="col-4 col-form-label">Display Name public as</label> 
+                                                    <div class="col-8">
+                                                        <select id="select" name="select" class="custom-select">
+                                                            <option value="jogging"> </option>
+                                                            <option value="jogging">Bieganie</option>
+                                                            <option value="swiming">Pływanie</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="website" class="col-4 col-form-label">Website</label> 
+                                                    <div class="col-8">
+                                                        <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="publicinfo" class="col-4 col-form-label">Public Info</label> 
+                                                    <div class="col-8">
+                                                        <textarea id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="newpass" class="col-4 col-form-label">New Password</label> 
+                                                    <div class="col-8">
+                                                        <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+                                                    </div>
+                                                </div> 
+                                                <div class="form-group row">
+                                                    <div class="offset-4 col-8">
+                                                        <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="viewDiv"></div>
+        </body>
+    </body>
+</html>
+{% endblock %}

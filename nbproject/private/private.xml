@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/src/AppBundle/Controller/MainPageController.php</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/src/AppBundle/Entity/User.php</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/src/AppBundle/Controller/MainPageGoogleMaps.php</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/views/myAccount/myaccount.html.twig</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/web/css/main.css</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/views/default/index.html.twig</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/views/mainPage/mainPage.html.twig</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/web/js/main.js</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/FOSUserBundle/views/layout.html.twig</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/src/AppBundle/Controller/MyAccountController.php</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/views/base.html.twig</file>
+            <file>file:/var/www/html/symfonyMeetUp/my_project_name/app/Resources/views/mainPage/mainPageGoogleMaps.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

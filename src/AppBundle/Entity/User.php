@@ -83,9 +83,20 @@ class User extends BaseUser {
 
     /** @ORM\Column(name="github_access_token", type="string", length=255, nullable=true) */
     protected $github_access_token;
-
+    
+    /**
+     *  @ORM\Column (name="activity" , type="string", length=100, nullable=true)
+     */
+    protected $activity;
     public function __construct() {
         parent::__construct();
+    }
+    public function setActivity($activity){
+        $this->activity = $activity;
+        return $this;
+    }
+    public function getActivity(){
+        return $this->activity;
     }
 
     public function setGoogleplusId($googlePlusId) {

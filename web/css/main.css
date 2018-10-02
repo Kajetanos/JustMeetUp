@@ -3,15 +3,56 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #4CAFB0;
     list-style: none;
+    -khtml-border-radius: 5px / 5px;
+
+    -webkit-border-radius: 5px / 5px;
+
+    -moz-border-radius: 5px / 5px;
+
+    border-radius: 5px / 5px;
 
 }
-
+#card{
+    width: 120%;
+}
 li {
     float: left;
 }
+input{
+    
+}
+#firstForm{
 
+    
+    
+}
+#divMyAccount input {
+   float: left;
+   width: 63%;
+}
+#divMyAccount button {
+   float: right;
+   width: 35%;
+   height: 100%
+}
+#menuMyAccount a:hover {
+    color: #78C8C9;
+}
+#menuMyAccount .active{
+    color:#4CAFB0;
+}
+#menuMyAccount {
+    padding-top: 28px;
+    padding-left: 18px;
+    width: 30px;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+    max-width: 85px;
+    left: -3%;
+}
 li a {
     display: block;
     color: white;
@@ -19,18 +60,59 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+.active{
+    color:white;
+}
 
 li a:hover:not(.active) {
     background-color: #111;
 }
 
-.active {
-    background-color: #4CAF50;
+#menu{
+    background-color: #4CAFB0;
+
 }
 
 html, body, #viewDiv {
-                    padding: 0;
-                    margin: 0;
-                    height: 100%;
-                    width: 100%;
-                }
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+#map {
+    float: left;
+    position: relative;
+    height: 400px;
+    width: 70%
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.notafications{
+    border:2px solid blue;
+    float:left; 
+    width: 30%;
+    height: 350px;
+}
+.places{
+    border:2px solid blue;
+    height:30%;
+    position: relative;
+    top: 410px;
+}
+.title_notafication{
+    font-size:  25px;
+}
+.title_places{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size:  25px;
+    width: 100%
+}
+.place{
+    transform: translate(-69%, -70%);
+}

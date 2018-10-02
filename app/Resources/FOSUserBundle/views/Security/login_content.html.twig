@@ -5,7 +5,7 @@
 {% endif %}
 <form action="{{ path("fos_user_security_check") }}" method="post">
   <div class="form-group">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in or <a href="/register" text="register"> sign on</a></h1>
 
     {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

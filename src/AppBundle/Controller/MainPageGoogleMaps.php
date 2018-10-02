@@ -17,17 +17,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class MainPageGoogleMaps extends Controller{
 
-    private $googleApi = 'AIzaSyBUW4F2L2cHvINX7uaZrUhRW-0An7HDGKk';
 
     /**
-     * @Route("/mainpageGoogleApi")
+     * @Route("/")
      */
     public function main() {
 
         $welcome = "hello";
         $notafications = ["powiadomienie 1" , "powiadomienie 2 "];
-        return $this->render('mainPage/mainPageGoogleMaps.html.twig', array('googleApi' => $this->googleApi , 
-            'notafications' => $notafications));
+        $places = ["placeOne", "placeTwo" , "placeThree"];
+        return $this->render('default/index.html.twig', array('googleApi' => $this->googleApi , 
+            'notafications' => $notafications,
+            'places'        => $places,));
     }
 
 }

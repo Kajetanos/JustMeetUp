@@ -13,48 +13,36 @@
             <style>
                 /* Always set the map height explicitly to define the size of the div
                  * element that contains the map. */
-                #map {
-                    float: left;
-                    height: 400px;
-                    width: 70%
-                }
-                /* Optional: Makes the sample page fill the window. */
-                html, body {
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                }
-                .notafications{
-                    float:left; 
-                    width: 30%;
-                }
+                
+
+
             </style>
         </head>
         <body>
             <div>
                 <div id="map"></div>
                 <div class="notafications">
-
                     <ol>
+                        <p class="title_notafication">Wydarzenie które mogę Cię zainteresować</p>
                         {% for notafication in notafications %}
-                            <ul>{{notafication}}</ul>
-                            {% endfor %}
+                            <ul>&bull; {{notafication}}</ul>
+                        {% endfor %}
                     </ol>
                 </div>
+            </div >
+            <div class="places">
+                <p class="title_places">Miejsca na które warto zwrócić uwagę</p>
+                <ol class="place">
+                {% for place in places %}
+                    <ul>&bull; {{place}}</ul>
+                {% endfor %}
+                </ol>
             </div>
-            <script>
-                var map;
-                function initMap() {
-                    var uluru = {lat: 53.344, lng: 17.95};
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: 53.1256045, lng: 17.8977559},
-                        zoom: 8
-                    });
-                    var marker = new google.maps.Marker({position: uluru, map: map})
-                }
-            </script>
+                
+            <script src="{{ asset('js/main.js') }}"></script>
             <script src="https://maps.googleapis.com/maps/api/js?key={{ googleApi }}&callback=initMap"
             async defer></script>
+            <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
         </body>
     </html>
 {% endblock %}
