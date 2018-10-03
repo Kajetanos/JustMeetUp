@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 /**
  * Description of MyAccountController
  *
@@ -27,8 +27,9 @@ class MyAccountController extends Controller {
      */
     public function myAccount(Request $request) {
 
+//        $user = $this->getUser();
         $user = $this->getUser();
-
+        var_dump($user);
         $name = $request->get('name');
         $email = $request->get('email');
         $activity = $request->get('select');
@@ -48,8 +49,24 @@ class MyAccountController extends Controller {
         $login = $user->getUsername();
         $this->get('fos_user.user_manager')->updateUser($user, false);
         $this->getDoctrine()->getManager()->flush();
+        $trueLogin = ucfirst($login);
+//        
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
 
-        return $this->render('myAccount/myaccount.html.twig', array('login' => $login, 'email' => $emailGet));
+        $form = $this->container->get('fos_user.change_password.form');
+        $formHandler = $this->container->get('fos_user.change_password.form.handler');
+
+        $process = $formHandler->process($user);
+        if ($process) {
+            $this->get('session')->setFlash('notice', 'Password changed succesfully');
+
+            return $this->redirect($this->generateUrl('settings'));
+        }
+//
+//        return $this->render('AcmeHelloBundle:Settings:password.html.twig', ['form' => $form->createView()]);
+        return $this->render('myAccount/myaccount.html.twig', array('login' => $trueLogin, 'email' => $emailGet, 'form' => $form->createView()));
     }
 
     /**

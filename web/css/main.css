@@ -116,3 +116,7 @@ html, body {
 .place{
     transform: translate(-69%, -70%);
 }
+h5{
+    text-align: center;
+    padding-bottom: 3%;
+}
