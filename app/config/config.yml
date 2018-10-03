@@ -5,7 +5,13 @@ imports:
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
-
+parameters:
+    locale: en
+    google_app_id: 242729310051-m2s1i6vfl2lhvjam8buh4s73b4vciu1v.apps.googleusercontent.com
+    google_app_secret: o-APQNqKtpHIpgzh3WwqX-BI
+    
+    github_app_id: df03cb87322f45858b14
+    github_app_secret: 03c748bda6ccf763a2ade180912f88f9e8446734
 
 framework:
     #esi: ~
